@@ -66,3 +66,31 @@ mysql> select * from senegalese_ecommerce.olist_orders_dataset limit 10;
 
 Access Redpanda Console
 To manage and monitor Redpanda, navigate to  [http://localhost:8080](http://localhost:8080)] in your browser.
+Accessing Kafka Connect
+Once you've added and started the Kafka Connect service, you should be able to access the list of available connector plugins by navigating to:
+```bash
+http://localhost:8083/connector-plugins/
+```
+ Set Up the Debezium Connector
+Now, you need to create a connector for Kafka Connect to capture changes from your MySQL database using Debezium. You can do this with a curl command:
+```bash
+ curl --request POST \
+  --url http://localhost:8083/connectors \
+  --header 'Content-Type: application/json' \
+  --data '{
+  "name": "src-senegalese_ecommerce",
+  "config": {
+    "connector.class": "io.debezium.connector.mysql.MySqlConnector",
+    "tasks.max": "1",
+    "database.hostname": "mysql",
+    "database.port": "3306",
+    "database.user": "debezium",
+    "database.password": "dbz",
+    "database.server.id": "184054",
+    "database.include.list": "senegalese_ecommerce",
+    "topic.prefix": "dbserver1",
+    "schema.history.internal.kafka.bootstrap.servers": "redpanda:9092",
+    "schema.history.internal.kafka.topic": "schema-changes.senegalese_ecommerce"
+  }
+}'
+```
