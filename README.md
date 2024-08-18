@@ -41,6 +41,8 @@ To generate transaction data for MySQL, access the data-generator container:
 docker exec -it data_generator /bin/bash
 
 ```
+
+````bash
 mysql> select * from senegalese_ecommerce.olist_orders_dataset limit 10;
 +----------------------------------+----------------------------------+--------------+--------------------------+---------------------+------------------------------+-------------------------------+-------------------------------+
 | order_id                         | customer_id                      | order_status | order_purchase_timestamp | order_approved_at   | order_delivered_carrier_date | order_delivered_customer_date | order_estimated_delivery_date |
@@ -57,4 +59,7 @@ mysql> select * from senegalese_ecommerce.olist_orders_dataset limit 10;
       | 2017-08-08 20:33:42           | 2017-08-21 00:00:00           |
 | 02ce6664223305cea5b46ef1f2d81461 | df3647cd1abeadb6a0fe143deb1b8cd2 | delivered    | 2017-08-02 21:25:06      | 2017-08-02 21:42:54 | 2017-08-03 18:29:42    
       | 2017-08-08 15:41:45           | 2017-08-22 00:00:00           |
-| 030840d9a6c8137615d5a2c916667c2c | 677fbd5e154bdb06b0ad01bd85aa2ee3 | delivered    | 2017-08-01 14:40:53      | 2017-08-01 14:50:23 | 2017-08-02 19:17:02    
+| 030840d9a6c8137615d5a2c916667c2c | 677fbd5e154bdb06b0ad01bd85aa2ee3 | delivered    | 2017-08-01 14:40:53      | 2017-08-01 14:50:23 | 2017-08-02 19:17:02
+
+`````
+
