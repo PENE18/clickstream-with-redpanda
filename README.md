@@ -28,6 +28,12 @@ docker-compose --env-file .env up -d
 ```
 Accessing MySQL
 After starting the services, you can access the MySQL database directly from the Docker container using the following command:
+
+```bash
+docker exec -it mysql mysql -u"root" -p"${MYSQL_ROOT_PASSWORD}" ${MYSQL_DATABASE}
+```
+![System Diagram](https://github.com/PENE18/clickstream-with-redpanda/blob/main/screen/create.PNG)
+
 Access the Data Generator
 To generate transaction data for MySQL, access the data-generator container:
 
@@ -35,9 +41,3 @@ To generate transaction data for MySQL, access the data-generator container:
 docker exec -it data_generator /bin/bash
 
 ```
-
-```bash
-docker exec -it mysql mysql -u"root" -p"${MYSQL_ROOT_PASSWORD}" ${MYSQL_DATABASE}
-```
-![System Diagram](https://github.com/PENE18/clickstream-with-redpanda/blob/main/screen/create.PNG)
-
