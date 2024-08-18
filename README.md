@@ -63,3 +63,6 @@ mysql> select * from senegalese_ecommerce.olist_orders_dataset limit 10;
 
 `````
 
+
+Access Redpanda Console
+To manage and monitor Redpanda, navigate to  [http://localhost:8080](http://localhost:8080)] in your browser.
