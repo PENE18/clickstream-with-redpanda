@@ -20,3 +20,5 @@ Both data sources are processed and sent to MinIO using Redpanda, a high-perform
 
 - Docker and Docker Compose installed on your machine.
 - Basic knowledge of Docker and container orchestration.
+  
+1. Running the Project
