@@ -2,13 +2,19 @@
 
 # Clickstream Data Pipeline Project
 
-This project simulates clickstream data generation, which is then sent to MinIO using Redpanda as the message broker. All components are containerized using Docker.
+This project integrates two primary data sources:
+1. **MySQL Database**: Emulates the business's operational data, specifically focusing on user order transactions.
+2. **Clickstream Data Generator**: Simulates user interactions on a website, producing clickstream events.
+
+Both data sources are processed and sent to MinIO using Redpanda, a high-performance streaming platform. All components are containerized using Docker.
 
 ## Architecture
 
-- **Clickstream Data Generator**: Simulates user interactions on a website and generates clickstream data.
-- **Redpanda**: A high-performance streaming platform used to publish the clickstream data.
-- **MinIO**: A high-performance, S3-compatible object storage used to store the processed data.
+- **MySQL Database**: Stores user order transaction data, representing the core business operations.
+- **Clickstream Data Generator**: Generates simulated clickstream events, such as page views and clicks.
+- **Redpanda**: Serves as the message broker, handling the streaming of both MySQL data and clickstream events.
+- **MinIO**: Provides S3-compatible object storage, where the processed data is stored.
+
 
 ## Prerequisites
 
