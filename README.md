@@ -32,4 +32,5 @@ After starting the services, you can access the MySQL database directly from the
 ```bash
 docker exec -it mysql mysql -u"root" -p"${MYSQL_ROOT_PASSWORD}" ${MYSQL_DATABASE}
 ```
+![System Diagram](https://example.com/diagram.png)
 
