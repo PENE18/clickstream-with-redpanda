@@ -22,3 +22,5 @@ Both data sources are processed and sent to MinIO using Redpanda, a high-perform
 - Basic knowledge of Docker and container orchestration.
   
 ## 1. Running the Project
+To start the entire stack, including MySQL, run the following command in the project root directory:
+docker-compose --env-file .env up -d
