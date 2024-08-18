@@ -25,11 +25,11 @@ Both data sources are processed and sent to MinIO using Redpanda, a high-perform
 To start the entire stack, including MySQL, run the following command in the project root directory:
 ```bash
 docker-compose --env-file .env up -d
-``````
+```
 Accessing MySQL
 After starting the services, you can access the MySQL database directly from the Docker container using the following command:
 
-bash
-Copier le code
+```bash
 docker exec -it mysql mysql -u"root" -p"${MYSQL_ROOT_PASSWORD}" ${MYSQL_DATABASE}
+```
 
