@@ -94,5 +94,5 @@ Now, you need to create a connector for Kafka Connect to capture changes from yo
   }
 }'
 ```
-
+![System Diagram](https://github.com/PENE18/clickstream-with-redpanda/blob/main/screen/redpanda2.PNG)
 
